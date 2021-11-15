@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Search API</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>News API 2.0</h1>
+    </header>
+    <main>
+      <div class="search-bar">
+        <div class="container">
+          <input id="search-input" type="text" />
+          <button id="search-button">Search</button>
+        </div>
+      </div>
+      <div id="news-container"></div>
+    </main>
+
+    <script>
+      const newsDiv = document.getElementById("news-container");
+      const searchButton = document.getElementById("search-button");
+      const searchInput = document.getElementById("search-input");
+
+      searchButton.addEventListener("click", async (event) => {
+        if (searchInput.value === "") return;
+        const url = "http://localhost:1607/api/?search=" + searchInput.value;
+        const response = await fetch(url);
+        const data = await response.text();
+        newsDiv.innerHTML = data;
+      });
+    </script>
+  </body>
+</html>

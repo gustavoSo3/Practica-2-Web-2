@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #f1f2f6;
+}
+
+header {
+  background-color: #27187e;
+  height: 50px;
+}
+header h1 {
+  padding: 10px;
+  text-align: center;
+  color: #f1f2f6;
+}
+
+.search-bar {
+  background-color: #758bfd;
+  padding: 10px;
+  margin: auto;
+}
+.search-bar .container {
+  margin: auto;
+}
+.search-bar .container input {
+  width: 75%;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+}
+.search-bar .container button {
+  height: 30px;
+  width: 20%;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+}
+.search-bar .container button:active {
+  background-color: #aeb8fe;
+  color: white;
+}
+
+#news-container {
+  margin: auto;
+}
+#news-container > div {
+  float: left;
+  box-sizing: border-box;
+  height: 450px;
+}
+#news-container > .news-item {
+  background-color: white;
+  padding: 5px;
+  text-align: center;
+  border: 1px #aeb8fe solid;
+}
+#news-container > .news-item img {
+  max-height: 200px;
+}
+#news-container > .news-item h3 {
+  overflow: hidden;
+  height: 60px;
+  max-height: 60px;
+  text-overflow: ellipsis;
+}
+#news-container > .news-item p {
+  text-align: justify;
+  overflow: hidden;
+  height: 145px;
+  text-overflow: ellipsis;
+}
+#news-container > .news-item a {
+  border-radius: 5px;
+  border: none;
+  display: block;
+  padding: 5px 0;
+  text-decoration: none;
+  background-color: #758bfd;
+  color: white;
+}
+
+#news-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media only screen and (min-width: 600px) {
+  #news-container > .news-item {
+    width: 33.3333333333%;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  #news-container > .news-item {
+    width: 25%;
+  }
+}
